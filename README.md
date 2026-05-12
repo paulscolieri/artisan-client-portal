@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Claire Crowe Collection — Portal
 
-## Getting Started
+Next.js client portal demo for Claire Crowe Collection. See the [root README](../README.md) for full project context.
 
-First, run the development server:
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build check
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Redirects to `/portal` on load. Use the floating role switcher (bottom-right) to toggle between Customer, Admin, and Production views.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  portal/           Customer portal (dashboard, orders, new project form)
+  admin/            Admin portal (dashboard, pipeline, orders, customers)
+  production/       Production queue
+  checkout/[id]/    Standalone Stripe-style checkout (outside portal layout)
 
-## Learn More
+components/
+  role-switcher.tsx     Floating demo role toggle
+  status-badge.tsx      Pipeline stage badge with colors
+  revenue-chart.tsx     SVG bar chart (no library)
 
-To learn more about Next.js, take a look at the following resources:
+data/
+  customers.ts          4 demo customers
+  orders.ts             8 demo orders across all pipeline stages
+  sales.ts              2026 YTD P&L + lost deal records
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+lib/
+  types.ts              All shared TypeScript types + label/color maps
+  role-context.tsx      React context for demo role state
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `params` in dynamic routes is a `Promise` in this version of Next.js — always `await params` before accessing properties.
+- No database. All data is hardcoded in `/data/*.ts`.
+- The checkout page lives at `/checkout/[id]` (not nested under `/portal`) to avoid inheriting the portal header layout.
+- Brand color: `#b87d6b` (rose/copper). Stripe checkout uses `#635bff` to match Stripe's actual UI.
