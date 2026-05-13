@@ -7,7 +7,7 @@ export default function ProductionLayout({ children }: { children: React.ReactNo
         <div className="mx-auto max-w-5xl flex items-center justify-between">
           <div className="flex items-center gap-4">
             <span className="font-heading text-xl tracking-widest uppercase text-stone-800">
-              Claire Crowe
+              Forge & Patina
             </span>
             <span className="text-xs uppercase tracking-widest text-stone-300 border border-stone-200 rounded px-2 py-0.5">
               Production

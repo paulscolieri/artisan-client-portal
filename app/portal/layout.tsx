@@ -6,7 +6,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
       <header className="border-b border-stone-200 bg-white px-6 py-4">
         <div className="mx-auto max-w-5xl flex items-center justify-between">
           <Link href="/portal" className="font-heading text-xl tracking-widest uppercase text-stone-800">
-            Claire Crowe
+            Forge & Patina
           </Link>
           <nav className="flex items-center gap-6 text-sm text-stone-500">
             <Link href="/portal" className="hover:text-stone-900 transition-colors">Dashboard</Link>

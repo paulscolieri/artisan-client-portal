@@ -17,7 +17,7 @@ export default async function CheckoutPage({
       <div className="w-full max-w-3xl">
         <div className="flex items-center justify-center mb-8 gap-3">
           <span className="font-heading text-lg tracking-widest uppercase text-stone-700">
-            Claire Crowe
+            Forge & Patina
           </span>
           <span className="text-stone-300">|</span>
           <span className="text-sm text-stone-400">Secure Checkout</span>

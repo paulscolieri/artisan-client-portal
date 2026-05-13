@@ -225,7 +225,7 @@ export default function NewProjectForm() {
             label="How are you connected to the collection?"
             required
             options={[
-              { value: 'established', label: 'Established Claire Crowe Collection Trade Member' },
+              { value: 'established', label: 'Established Forge & Patina Trade Member' },
               { value: 'prospective', label: 'Interested in Becoming a Trade Member' },
               { value: 'enthusiast', label: 'A Design Enthusiast' },
             ]}

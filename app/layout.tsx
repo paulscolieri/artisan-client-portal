@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Claire Crowe Collection',
+  title: 'Forge & Patina',
   description: 'Custom artisan metalwork for the discerning home.',
 }
 
