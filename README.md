@@ -1,6 +1,16 @@
-# Claire Crowe Collection — Portal
+# Artisan Client Portal — Demo
 
-Next.js client portal demo for Claire Crowe Collection. See the [root README](../README.md) for full project context.
+A high-fidelity client portal demo built for a custom artisan metalwork business. Three distinct role views, mock Stripe checkout, and a live P&L dashboard — all running on static seed data with no backend required.
+
+**[Live demo](https://portal-g5xerpgcm-paul-2001s-projects.vercel.app)**
+
+## Role views
+
+Use the floating switcher (bottom-right corner) to toggle between:
+
+- **Customer** — dashboard, order history with status stepper, project intake form, mock Stripe checkout
+- **Admin** — 2026 YTD P&L dashboard with revenue chart, pipeline Kanban, orders table, customer list
+- **Production** — timeline-sorted active order queue, specs-only detail view
 
 ## Setup
 
